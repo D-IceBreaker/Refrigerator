@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Instagram</title>
+        <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png">
+        <style>
+            .ent {
+                min-height: 100%;
+                overflow: hidden;
+            }
+
+            .entirePage {
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+                margin: 0;
+                padding: 0;
+                position: relative;
+                background-color: #fafafa;
+            }
+
+            .article {
+                display: flex;
+                flex-direction: row;
+                align-items: stretch;
+                flex-shrink: 0;
+                position: relative;
+                flex-grow: 1;
+                justify-content: center;
+                margin: 32px auto 0;
+                max-width: 935px;
+                padding-bottom: 32px;
+                width: 100%;
+            }
+
+            .phoneBox {
+                align-self: center;
+                background-image: url(https://www.instagram.com/static/images/homepage/home-phones@2x.png/9364675fb26a.png);
+                background-position: 0 0;
+                background-size: 454px 618px;
+                background-repeat: no-repeat;
+                flex-basis: 454px;
+                height: 618px;
+                width: auto;
+                margin-left: -35px;
+                margin-right: -15px;
+            }
+
+            .phones {
+                margin: 99px 0 0 151px;
+                position: relative;
+            }
+
+            .phoneImg {
+                height: 427px;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 240px
+            }
+
+            .reg {
+                color: #262626;
+                justify-content: center;
+                margin-top: 12px;
+                max-width: 350px;
+            }
+
+            .loginBox {
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                align-items: center;
+                background-color: #fff;
+                border: 1px solid #dbdbdb;
+                border-radius: 1px;
+                margin: 0 0 10px;
+                padding: 10px 0;
+            }
+
+            .loginBox h2 {
+                margin: 22px auto 12px;
+                background-image: url(https://www.instagram.com/static/bundles/metro/sprite_core_2x_bcd90c1d4868.png/bcd90c1d4868.png);
+                background-size: 440px 411px;
+                background-position: 0 -129px;
+                background-repeat: no-repeat;
+                height: 51px;
+                width: 175px;
+                display: block;
+                overflow: hidden;
+                text-indent: 110%;
+                white-space: nowrap;
+            }
+
+            .insideLoginBox {
+                margin-bottom: 10px;
+                max-width: 350px;
+                width: 100%;
+            }
+
+            .insideLoginBox form {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .login {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                margin-top: 24px;
+            }
+
+            .insideLoginBox form a {
+                color: #00376b;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                font-size: 12px;
+                line-height: 14px;
+                margin-top: 12px;
+                text-align: center;
+                text-decoration: none;
+            }
+
+            .inputBox {
+                margin: 0 40px 6px;
+                display: flex;
+            }
+
+            .inputGround {
+                align-items: center;
+                background: #fafafa;
+                border: 1px solid #dbdbdb;
+                border-radius: 3px;
+                box-sizing: border-box;
+                color: #262626;
+                display: flex;
+                flex-direction: row;
+                font-size: 14px;
+                position: relative;
+                width: 100%;
+            }
+
+            .loginLabel {
+                display: flex;
+                height: 36px;
+                flex: 1 0 0;
+                padding: 0;
+                position: relative;
+                margin: 0;
+                min-width: 0;
+            }
+
+            .overlogin {
+                color: #8e8e8e;
+                font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+                font-size: 12px;
+                height: 36px;
+                left: 8px;
+                line-height: 36px;
+                overflow: hidden;
+                pointer-events: none;
+                position: absolute;
+                right: 0;
+                text-overflow: ellipsis;
+                transform-origin: left;
+                transition: -webkit-transform ease-out .1s;
+                transition: transform ease-out .1s;
+                user-select: none;
+                white-space: nowrap;
+            }
+
+            .name {
+                color: #262626;
+                font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+                font-size: 16px;
+                line-height: 18px;
+                background: #fafafa;
+                border: 0;
+                flex: 1 0 auto;
+                margin: 0;
+                outline: 0;
+                overflow: hidden;
+                padding: 9px 0 7px 8px;
+                text-overflow: ellipsis;
+                width: 100%;
+            }
+
+            .rightSpace {
+                align-items: center;
+                flex: 0 0 auto;
+                flex-direction: row;
+                height: 100%;
+                padding-right: 8px;
+                vertical-align: middle;
+            }
+
+            .loginButtonBox {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                margin: 8px 40px;
+                position: relative;
+            }
+
+            .loginButton {
+                display: block;
+                box-sizing: border-box;
+                padding: 5px 9px;
+                background-color: rgba(0,149,246,.3);
+                opacity: 1;
+                border: 1px solid transparent;
+                border-radius: 4px;
+                position: relative;
+                width: 100%;
+                margin: 0;
+            }
+
+            .loginButton div {
+                flex: 0 0 auto;
+                justify-content: flex-start;
+                align-items: stretch;
+                align-content: stretch;
+                text-align: center;
+                color: #fff;
+                font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 18px;
+            }
+
+            .or {
+                margin: 10px 40px 18px;
+                display: flex;
+                flex-direction: row;
+            }
+
+            .orLine {
+                background-color: #dbdbdb;
+                height: 1px;
+                position: relative;
+                top: .45em;
+                flex-grow: 1;
+                flex-shrink: 1;
+            }
+
+            .orILI {
+                color: #8e8e8e;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                font-size: 13px;
+                font-weight: 600;
+                line-height: 15px;
+                margin: 0 18px;
+                text-transform: uppercase;
+                flex-grow: 0;
+                flex-shrink: 0;
+            }
+
+            .loginFacebook {
+                border: 0;
+                color: #0095f6;
+                display: inline;
+                padding: 0;
+                position: relative;
+                appearance: none;
+                background: 0 0;
+                box-sizing: border-box;
+                cursor: pointer;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                font-size: 14px;
+                line-height: 18px;
+                font-weight: 600;
+                text-align: center;
+                text-transform: inherit;
+                text-overflow: ellipsis;
+                width: auto;
+            }
+
+            .iconFacebook {
+                background-image: url(https://www.instagram.com/static/bundles/metro/sprite_core_2x_bcd90c1d4868.png/bcd90c1d4868.png);
+                background-repeat: no-repeat;
+                background-size: 440px 411px;
+                background-position: -347px -329px;
+                position: relative;
+                display: inline-block;
+                top: 3px;
+                height: 16px;
+                width: 16px;
+                margin-right: 8px; 
+            }
+
+            .textFacebook {
+                color: #385185;
+                font: inherit;
+            }
+
+            .regBox {
+                align-items: center;
+                background-color: #fff;
+                border: 1px solid #dbdbdb;
+                border-radius: 1px;
+                margin: 0 0 10px;
+                padding: 10px 0;
+            }
+
+            .insideRegBox {
+                display: block;
+                font-size: 14px;
+                line-height: 18px;
+                margin: -3px 0 -4px;
+            }
+
+            .wannaReg {
+                color: #262626;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                font-size: 14px;
+                margin: 15px;
+                text-align: center;
+            }
+
+            .wannaReg a {
+                text-decoration: none;
+            }
+
+            .wannaReg a span {
+                display: inline;
+                margin: 0;
+                color: #0095f6;
+                font-weight: 600;
+            }
+
+            .installBox {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                position: relative;
+            }
+
+            .plsInstall {
+                color: #262626;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                font-size: 14px;
+                line-height: 18px;
+                margin: 10px 20px 10px 20px;
+                text-align: center;
+            }
+
+            .installButtonBox {
+                display: flex;
+                text-align: center;
+                align-content: stretch;
+                align-items: stretch;
+                justify-content: center;
+                flex-direction: row;
+                margin: 10px 0;
+            }
+
+            .installButtonBox a {
+                margin-right: 8px;
+            }
+
+            .installButtonBox a:last-child {
+                margin-right: 0;
+            }
+
+            .footer {
+                padding: 0px 16px;
+            }
+            
+            .footerContent {
+                margin-bottom: 52px;
+                align-items: stretch;
+                align-content: stretch;
+            }
+
+            .links {
+                margin-top: 24px;
+            }
+
+            .info {
+                display: flex;
+                flex-wrap: wrap;
+                text-align: center;
+                align-content: stretch;
+                align-items: stretch;
+                justify-content: center;
+                flex-direction: row;
+                position: relative;
+            }
+
+            .info a {
+                margin: 0px 8px 12px 8px;
+                display: block;
+                color: #8e8e8e;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 14px;
+                text-decoration: none;
+            }
+
+            .langCopyright {
+                display: flex;
+                margin: 12px 0px;
+                text-align: center;
+                height: 9px;
+                align-content: stretch;
+                align-items: stretch;
+                justify-content: center;
+                flex-direction: row;
+            }
+
+            .language {
+                color: #8e8e8e;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 14px;
+                margin: -2px 0 -3px;
+            }
+
+            .arrowBox {
+                height: 12px;
+                width: 12px;
+                margin-left: 4px;
+            }
+
+            .copyright {
+                margin-left: 16px;
+            }
+
+            #InstagramCR {
+                color: #8e8e8e;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 14px;
+                margin: -2px 0 -3px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="entirePage ent">
+            <main class="main">
+                <article class="article">
+                    <div class="phoneBox">
+                        <div class="phones">
+                            <img class="phoneImg" src="https://www.instagram.com/static/images/homepage/screenshot5-2x.jpg/5e04169b9308.jpg">
+                        </div>
+                    </div>
+                    <div class="reg">
+                        <div class="loginBox">
+                            <h2>Instagram</h2>
+                            <div class="insideLoginBox">
+                                <form>
+                                    <div class="login">
+                                        <div class="inputBox">
+                                            <div class="inputGround">
+                                                <label class="loginLabel">
+                                                    <span class="overlogin">Номер телефона, имя пользователя или эл. адрес</span>
+                                                    <input autocapitalize="off" autocorrect="off" maxlength="75" type="text" class="name">
+                                                </label>
+                                                <div class="rightSpace"></div>
+                                            </div>
+                                        </div>
+                                        <div class="inputBox">
+                                            <div class="inputGround">
+                                                <label class="loginLabel">
+                                                    <span class="overlogin">Пароль</span>
+                                                    <input autocapitalize="off" autocorrect="off" type="password" class="name">
+                                                </label>
+                                                <div class="rightSpace"></div>
+                                            </div>
+                                        </div>
+                                        <div class="loginButtonBox">
+                                            <button class="loginButton">
+                                                <div>Войти</div>
+                                            </button>
+                                        </div>
+                                        <div class="or">
+                                            <div class="orLine"></div>
+                                            <div class="orILI">ИЛИ</div>
+                                            <div class="orLine"></div>
+                                        </div>
+                                        <div class="loginButtonBox">
+                                            <button class="loginFacebook">
+                                                <span class="iconFacebook"></span>
+                                                <span class="textFacebook">Войти через Facebook</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <a href="https://www.instagram.com/accounts/password/reset/" tabindex="0">Забыли пароль?</a>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="regBox">
+                            <div class="insideRegBox">
+                                <p class="wannaReg"> У вас ещё нет аккаунта? 
+                                    <a href="https://www.instagram.com/accounts/emailsignup/" tabindex="0">
+                                    <span>
+                                        Зарегистрироваться
+                                    </span>
+                                </a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="installBox">
+                            <p class="plsInstall"> Установите приложение. </p>
+                            <div class="installButtonBox">
+                                <a href="https://itunes.apple.com/app/instagram/id389801252?pt=428156&ct=igweb.loginPage.badge&mt=8&vt=lo">
+                                    <img alt="Доступно в Магазине приложений" src="https://www.instagram.com/static/images/appstore-install-badges/badge_ios_russian-ru.png/bfba6d0fd6bd.png" height="40px">
+                                </a>
+                                <a href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3DEA3A219A-5AF6-45D9-AA89-2F751C782B88%26utm_content%3Dlo%26utm_medium%3Dbadge">
+                                    <img alt="Доступно в Googple Play" src="https://www.instagram.com/static/images/appstore-install-badges/badge_android_russian-ru.png/4c70948c09f3.png" height="40px">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </main>
+            <footer class="footer">
+                <div class="footerContent">
+                    <div class="links">
+                        <div class="info">
+                            <a href="https://about.instagram.com/">Информация</a>
+                            <a href="https://about.instagram.com/blog/">Блог</a>
+                            <a href="https://www.instagram.com/about/jobs/">Вакансии</a>
+                            <a href="https://help.instagram.com/">Помощь</a>
+                            <a href="https://www.instagram.com/developer/">API</a>
+                            <a href="https://www.instagram.com/legal/privacy/">Конфиденциальность</a>
+                            <a href="https://www.instagram.com/legal/terms/">Условия</a>
+                            <a href="https://www.instagram.com/directory/profiles/">Популярные аккаунты</a>
+                            <a href="https://www.instagram.com/directory/hashtags/">Хэштеги</a>
+                            <a href="https://www.instagram.com/explore/locations/">Места</a>
+                        </div>
+                        <div class="info">
+                            <a href="https://www.instagram.com/topics/beauty/">Красота</a>
+                            <a href="https://www.instagram.com/topics/dance-and-performance/">Танцы и выступления</a>
+                            <a href="https://www.instagram.com/topics/fitness/">Фитнес</a>
+                            <a href="https://www.instagram.com/topics/food-and-drink/">Еда и напитки</a>
+                            <a href="https://www.instagram.com/topics/home-and-garden/">Дом и сад</a>
+                            <a href="https://www.instagram.com/topics/music/">Музыка</a>
+                            <a href="https://www.instagram.com/topics/visual-arts/">Изобразительное искусство</a>
+                        </div>
+                    </div>
+                    <div class="langCopyright">
+                        <div class="language">
+                            <span>
+                                <div style="display: flex; height: 14;">
+                                    <span>Русский</span>
+                                    <div class="arrowBox">
+                                        <span style="display: inline-block; transform: rotate(180deg);" >
+                                            <svg aria-label="Значок &quot;стрелка вниз&quot;" fill="#8e8e8e" height="12" viewBox="0 0 48 48" width="12"><path d="M40 33.5c-.4 0-.8-.1-1.1-.4L24 18.1l-14.9 15c-.6.6-1.5.6-2.1 0s-.6-1.5 0-2.1l16-16c.6-.6 1.5-.6 2.1 0l16 16c.6.6.6 1.5 0 2.1-.3.3-.7.4-1.1.4z"></path></svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="copyright">
+                            <div id="InstagramCR">© Instagram от Facebook, 2021</div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
