@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>To Do List</title>
+        <link rel="icon" href="https://i.ya-webdesign.com/images/log-icon-png-18.png">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            .header {
+                background-color: midnightblue;
+                color: white;
+                padding: 12px 50px 20px;
+                font-family: 'Segoe UI', Verdana, sans-serif;
+            }
+
+            .main {
+                text-align: center;
+                padding: 60px;
+            }
+
+            .main:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            h1 {
+                margin-bottom: 18px;
+            }
+
+            #taskInput {
+                border: 1px solid lightgrey;
+                padding: 8px 10px;
+                width: 75%;
+                float: left;
+                font-size: 17px;
+            }
+
+            #taskInput:focus {
+                outline-color: royalblue;
+            }
+
+            #addButton {
+                padding: 10px 18px;
+                margin-left: 10px;
+                background-color: navy;
+                color: white;
+                font-weight: 600;
+                border: 1px solid;
+                float: left;
+                text-align: center;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            #addButton:hover {
+                background-color: rgb(0, 0, 192);
+            }
+
+            .taskBoard {
+                text-align: center;
+                padding: 0px 60px;
+            }
+
+            ul {
+                list-style: none;
+            }
+
+            ul li {
+                box-sizing: border-box;
+                cursor: pointer;
+                position: relative;
+                padding: 12px 5px 12px 30px;
+                border: 1px solid rgb(230, 230, 230);
+                font-family: sans-serif;
+                font-size: 18px;
+                transition: 0.2s;
+                user-select: none;
+                text-align: left;
+            }
+
+            ul li:hover {
+                background-color: rgb(245, 245, 245);
+            }
+
+            ul li.checked {
+                text-decoration: line-through;
+                background-color: lightgray;
+            }
+
+            input[type="checkbox"] {
+                margin-right: 40px;
+            }
+
+            .deleteButton {
+                position: absolute;
+                top: -1px;
+                right: 0px;
+                height: 46.67px;
+                border: none;
+                background-color: transparent;
+                padding: 12px;
+                cursor: pointer;
+            }
+
+            .deleteButton:hover {
+                background-color: rgb(230, 230, 230);
+            }
+
+            .deleteButton:focus {
+                outline: none;
+                background-color: orangered;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h2>To Do List</h2>
+        </div>
+        <div class="main">
+            <h1>To Do List</h1>
+            <input type="text" placeholder="New Task" id="taskInput">
+            <button onclick="submit()" type="submit" id="addButton">Add</button>
+        </div>
+        <div class="taskBoard">
+            <ul id="taskList">
+                <!-- <li><input type="checkbox"><label>First Task</label><button class="deleteButton">X</button></li>
+                <li><input type="checkbox"><label>Second Task</label><button class="deleteButton">X</button></li>
+                <li><input type="checkbox"><label>Third Task</label><button class="deleteButton">X</button></li>
+                <li><input type="checkbox"><label>Fourth Task</label><button class="deleteButton">X</button></li> -->
+            </ul>
+        </div>
+        <script type="text/javascript" src="todolist.js"></script>
+    </body>
+</html>
