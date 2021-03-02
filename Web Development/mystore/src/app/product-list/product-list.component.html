@@ -1,0 +1,26 @@
+<h2>Products</h2>
+<h3>
+	Electronics > Computers & Accessories > {{currCategory}}
+</h3>
+
+<div *ngFor="let product of productItems">
+	<div *ngIf="product.category===currCategory">
+		<img src={{product.image}}>
+		<h3>
+			<a href={{product.link}} [title]="product.name + ' details'">
+				{{product.name}}
+			</a>
+		</h3>
+		<p *ngIf="product.rating">
+			<strong>Rating:</strong> {{ product.rating }} out of 5
+		</p>
+		<p *ngIf="product.likes">
+			<strong>Likes:</strong> {{ product.likes }}
+		</p>
+		<p *ngIf="product.description">
+			<strong>Description:</strong> {{ product.description }}
+		</p>
+		<button><a href="https://t.me/share/url?url={{product.link}}">Share</a></button>
+		<button (click)="like()">Like</button>
+	</div>
+</div>

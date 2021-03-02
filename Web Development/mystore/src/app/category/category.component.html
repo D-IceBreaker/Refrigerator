@@ -1,0 +1,23 @@
+<h2>Categories: </h2>
+
+<div *ngFor="let category of productCategories">
+    <h3 *ngIf="category.name">
+        <a (click) = "setCategory(category.name)">{{category.name}}</a>
+    </h3>
+</div>
+
+<div [ngSwitch]="currCategory">
+    <div *ngSwitchCase="'Data Storage'">
+        <app-product-list [currCategory]="currCategory"></app-product-list>
+    </div>
+    <div *ngSwitchCase="'Computer Components'">
+        <app-product-list [currCategory]="currCategory"></app-product-list>
+    </div>
+    <div *ngSwitchCase="'Networking & Wireless'">
+        <app-product-list [currCategory]="currCategory"></app-product-list>
+    </div>
+    <div *ngSwitchCase="'Monitors'">
+        <app-product-list [currCategory]="currCategory"></app-product-list>
+    </div>
+    <div *ngSwitchDefault>Choose a Category to proceed.</div>
+</div>
