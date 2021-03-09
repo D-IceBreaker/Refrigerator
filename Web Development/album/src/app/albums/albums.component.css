@@ -1,0 +1,59 @@
+.albums-menu {
+    margin: 20px 0px;
+}
+
+span {
+    margin-right: 1rem;
+}
+
+a {
+    background-color: rgb(105,105,105);
+    border-radius: 2px;
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    min-width: 70px;
+    margin: .5rem 0px .5rem .5rem ;
+    box-sizing: border-box;
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+}
+
+@media (min-width: 600px) {
+    a {
+        width: 18%;
+        box-sizing: content-box;
+    }
+}
+  
+a:hover {
+    cursor: pointer;
+    background-color: #000;
+}
+
+.delete {
+    cursor: pointer;
+    border: none;
+    border-radius: 0;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: inline-block;
+    width: 2%;
+    text-align: center;
+    box-sizing: content-box;
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+    transition: 0.2s;
+}
+
+.delete:hover {
+    background-color: orangered;
+}
+

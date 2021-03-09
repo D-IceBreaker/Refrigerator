@@ -1,0 +1,8 @@
+<div *ngIf="album">
+    <h2>Photos of {{album.title | uppercase}}</h2>
+    <button (click)="goBack()">Return Back</button>
+
+    <div class="photo-album">
+        <img *ngFor="let photo of photos" src={{photo.thumbnailUrl}} alt={{photo.title}}>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+label, span {
+    color: #435960;
+    font-weight: bold;
+}
+input, span {
+    font-size: 1em;
+    padding: .5rem;
+}
+button {
+    cursor: pointer;
+    margin-top: 20px;
+    margin-right: 3rem;
+    background-color: #eee;
+    padding: 1rem;
+    border: 1px solid #bebebe;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+button:hover {
+    opacity: 0.8;
+}
+button:disabled {
+    background-color: #eee;
+    color: #ccc;
+    cursor: auto;
+}
+a {
+    background-color: #eee;
+    border: 1px solid #bebebe;
+    border-radius: 4px;
+    padding: 1rem;
+}

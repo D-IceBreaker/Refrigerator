@@ -1,0 +1,18 @@
+<h2>My Albums</h2>
+<div>
+  <label id="new-album">Album title: </label>
+  <input for="new-album" #albumTitle />
+
+  <button class="add-button" (click)="add(albumTitle.value); albumTitle.value=''">
+    Add album
+  </button>
+</div>
+
+<div class="albums-menu">
+  <span *ngFor="let album of albums" >
+    <a routerLink="/albums/{{album.id}}">
+      {{album.title}}
+    </a>
+    <button class="delete" title="delete album"(click)="delete(album)">x</button>
+  </span>
+</div>
