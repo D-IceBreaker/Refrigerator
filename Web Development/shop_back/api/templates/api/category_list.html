@@ -1,0 +1,7 @@
+<h2>Categories</h2>
+<ul>
+    {% for category in object_list %}
+        <li><a href="{% url 'category_detail' category.id %}">{{ category.name }}</a></li>
+    {% endfor %}
+</ul>
+<button><a href="{% url 'product_list' %}">Search all</a></button>

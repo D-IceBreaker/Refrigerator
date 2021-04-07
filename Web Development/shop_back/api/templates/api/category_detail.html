@@ -1,0 +1,11 @@
+<h1>{{ category.name }}</h1>
+
+<p>
+    <strong>Products of this Category:</strong>
+</p>
+<ul>
+    {% for product in category.product_set.all %}
+        <li><a href="{% url 'product_detail' product.id %}">{{ product.name }}: {{ product.description }}</a></li>
+    {% endfor %}
+</ul>
+<button><a href="{% url 'categories_list' %}">Back</a></button>
