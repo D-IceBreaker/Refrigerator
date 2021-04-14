@@ -1,0 +1,10 @@
+<h1>{{ vacancy.name }}</h1>
+<p>
+    <strong>Salary:</strong> ${{vacancy.salary}}
+</p>
+<p>
+    <strong><a href="{% url 'companyDetail' vacancy.company.id%}"> {{vacancy.company}} </a></strong>
+</p>
+<p> {{vacancy.description}}.
+</p>
+<button><a href="{% url 'vacancyList' %}">Back to Vacancies</a></button>

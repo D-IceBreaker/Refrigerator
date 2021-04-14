@@ -1,0 +1,7 @@
+<h2>Vacancies in <a href="{% url 'companyDetail' company.id %}">{{company.name}}</a></h2>
+<ul>
+    {% for vacancy in company.vacancy_set.all %}
+        <li><a href="{% url 'vacancyDetail' vacancy.id %}">{{ vacancy.name }}</a><br>  
+            <em>${{vacancy.salary}}</em></li>
+    {% endfor %}
+</ul>

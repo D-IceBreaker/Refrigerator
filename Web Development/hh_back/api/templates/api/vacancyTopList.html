@@ -1,0 +1,10 @@
+<h2>Top Ten Best Vacancies</h2>
+<ul>
+    {% for vacancy in object_list %}
+        <li><a href="{% url 'vacancyDetail' vacancy.id %}">{{ vacancy.name }}</a> in 
+            <a href="{% url 'companyDetail' vacancy.company.id %}">{{vacancy.company}}</a><br> 
+            <em>${{vacancy.salary}}</em></li>
+    {% endfor %}
+</ul>
+
+<button><a href="{% url 'index' %}">Back to index</a></button><br>

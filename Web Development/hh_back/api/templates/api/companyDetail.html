@@ -1,0 +1,9 @@
+<h1>{{ company.name }}</h1>
+<p><strong>Headquarters:</strong> {{company.city}}</p>
+<p>{{company.description}}</p>
+
+<button><a href="{% url 'companyVacancyList' company.id %}">Vacancies in this company</a></button><br>
+
+<button><a href="{% url 'companyList' %}">Back to Companies</a></button><br>
+
+<p><em>{{company.address}}</em></p>
