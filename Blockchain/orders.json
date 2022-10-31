@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "status": "No current order"
+    },
+    {
+        "id": 2,
+        "status": "Is being processed"
+    },
+    {
+        "id": 3,
+        "status": "In the way"
+    },
+    {
+        "id": 4,
+        "status": "Delivered"
+    },
+    {
+        "id": 5,
+        "status": "Declined"
+    }
+]
